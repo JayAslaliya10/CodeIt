@@ -1,9 +1,9 @@
-import { CodeEditorWindow } from "./components/CodeEditorWindow";
+import { LandingIDE } from "./components/LandingIDE";
 
 function App() {
   return (
     <div className="App">
-      <CodeEditorWindow/>
+      <LandingIDE/>
     </div>
   );
 }

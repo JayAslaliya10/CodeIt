@@ -1,0 +1,22 @@
+.input-url{
+    width: 70%;
+    height: 40px;
+    padding: 3px 13px;
+    font-size: 15px;
+}
+.fetch-btn{
+    width: 100px;
+    height: 50px;
+    font-size: 15px;
+    margin: 0px 10px;
+}
+.url-input-cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0px;
+}
+.question-frame{
+    width: 1000px;
+    height: 1000px;
+}
