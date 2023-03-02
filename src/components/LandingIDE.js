@@ -28,6 +28,10 @@ export const LandingIDE = () => {
             stdin : input,
             language : "cpp"
         }
+        updateMsg({
+            msg:"Compiling ...",
+            color:"orange"
+        })
         // console.log(data);
         await axios.post("http://localhost:3001/submitcode", data).then((res)=>{
             console.log(res.data.output);
