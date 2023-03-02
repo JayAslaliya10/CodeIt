@@ -20,3 +20,42 @@
     width: 1000px;
     height: 1000px;
 }
+.ide-input-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-container{
+    width: 390px;
+}
+.overlay{
+    width: 70%;
+}
+.test-input{
+    height: 100px;
+    width: 350px;
+    padding: 10px 10px;
+    font-size: 15px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.test-input-div{
+    margin: 10px 10px;
+    padding: 10px 5px;
+}
+.submitbtn-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.submit-btn{
+    padding: 12px 40px;
+    border-radius: 3px;
+    color: white;
+    background: black;
+}
+.output-msg{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
