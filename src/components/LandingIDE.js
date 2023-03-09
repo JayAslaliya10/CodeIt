@@ -16,7 +16,7 @@ export const LandingIDE = () => {
         ChangeInput(e.target.value);
     }
     const updateCode = (s, value) => {
-        if(s == "code") changeCode(value)
+        if(s === "code") changeCode(value)
     }
     const expectedOutputHover = (e) => {
         changeExpected(e.target.value);
@@ -28,6 +28,10 @@ export const LandingIDE = () => {
             stdin : input,
             language : "cpp"
         }
+        updateMsg({
+            msg:"Compiling ...",
+            color:"orange"
+        })
         // console.log(data);
         updateMsg({
             msg: "Compiling..",
