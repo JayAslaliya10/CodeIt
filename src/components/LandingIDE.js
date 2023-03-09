@@ -33,6 +33,10 @@ export const LandingIDE = () => {
             color:"orange"
         })
         // console.log(data);
+        updateMsg({
+            msg: "Compiling..",
+            color : "orange"
+        })
         await axios.post("http://localhost:3001/submitcode", data).then((res)=>{
             console.log(res.data.output);
             changeOutput(res.data.output.output);
