@@ -20,11 +20,12 @@ export const Home = () => {
                     <img src={img1} alt=""/>
                     
                     <div className="pattern">
-                        <img src={img2} alt=""/>
+                        <img src={img2} alt="imgnotavl"/>
                         <img src={img2} alt=""/>
                     </div>
                 </div>
             </div>
         </>
+        
     )
 }
