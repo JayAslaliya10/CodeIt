@@ -16,6 +16,8 @@ export const LandingIDE = () => {
     const [url, updateUrl] = useState("");
     const languages = [
         { label: 'C++', value: 'cpp' },
+        { label: 'C++ 14', value: 'cpp14' },
+        { label: 'C++ 17', value: 'cpp17' },
         { label: 'C', value: 'c' },
         { label: 'Java', value: 'java' },
         { label: 'Python', value: 'python' },
