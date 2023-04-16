@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import WebEditor from './WebEditor'
 import useLocalStorage from '../hooks/useLocalStorage'
 import '../css/webeditor.css'
@@ -8,9 +8,18 @@ function WebIndex() {
   const [css, setCss] = useLocalStorage('css', '')
   const [js, setJs] = useLocalStorage('js', '')
   const [srcDoc, setSrcDoc] = useState('')
-
+  const f1 = (val) => {
+    setHtml(val);
+  }
+  const f2 = (val) => {
+    setCss(val);
+  }
+  const f3 = (val) => {
+    setJs(val);
+  }
   useEffect(() => {
     const timeout = setTimeout(() => {
+      console.log("inside ", html, css, js);
       setSrcDoc(`
         <html>
           <body>${html}</body>
@@ -19,9 +28,8 @@ function WebIndex() {
         </html>
       `)
     }, 250)
-
     return () => clearTimeout(timeout)
-  }, [srcDoc])
+  }, [html, css, js])
 
   return (
     <>
@@ -30,19 +38,19 @@ function WebIndex() {
           language="xml"
           displayName="HTML"
           value={html}
-          onChange={setHtml}
+          onChange={f1}
         />
         <WebEditor
           language="css"
           displayName="CSS"
           value={css}
-          onChange={setCss}
+          onChange={f2}
         />
         <WebEditor
           language="javascript"
           displayName="JS"
           value={js}
-          onChange={setJs}
+          onChange={f3}
         />
       </div>
       <div className="pane">
