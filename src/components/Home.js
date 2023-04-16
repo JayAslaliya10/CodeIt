@@ -8,18 +8,18 @@ import img2 from "../images/background.png"
 export const Home = () => {
     return (
         <>
-            <div class="header">
+            <div className="header">
                 <Navbar/>
-                <div class="content">
+                <div className="content">
                     <h1>Hello!</h1>
                     <h1><span>We're</span> Code~It...</h1><br/>
                     <p>"Unleash your coding potential with ease: Join our platform today."</p>
                     <Link to="#">Contests</Link>
                 </div>
-                <div class="image-box">
+                <div className="image-box">
                     <img src={img1} alt=""/>
                     
-                    <div class="pattern">
+                    <div className="pattern">
                         <img src={img2} alt=""/>
                         <img src={img2} alt=""/>
                     </div>
