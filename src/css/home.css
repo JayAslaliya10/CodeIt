@@ -8,7 +8,7 @@
 :root{
     --background-color:#fff;
     --text-color:#555;
-    --title-color:#000;
+    --title-color:#fff;
 }
 .dark-theme{
     --background-color:#000;
@@ -17,9 +17,9 @@
 
 }
 
-body{
-    background-color:var(--background-color);
-    color:var(--text-color);
+.header{
+    background-color:#000;
+    color:#999;
     transition: background-color 0.8s,color 0.8s;
 }
 
