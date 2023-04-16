@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Editor from './WebEditor'
+import WebEditor from './WebEditor'
 import useLocalStorage from '../hooks/useLocalStorage'
+import '../css/webeditor.css'
 
 function WebIndex() {
   const [html, setHtml] = useLocalStorage('html', '')
@@ -20,24 +21,24 @@ function WebIndex() {
     }, 250)
 
     return () => clearTimeout(timeout)
-  }, [html, css, js])
+  }, [srcDoc])
 
   return (
     <>
       <div className="pane top-pane">
-        <Editor
+        <WebEditor
           language="xml"
           displayName="HTML"
           value={html}
           onChange={setHtml}
         />
-        <Editor
+        <WebEditor
           language="css"
           displayName="CSS"
           value={css}
           onChange={setCss}
         />
-        <Editor
+        <WebEditor
           language="javascript"
           displayName="JS"
           value={js}

@@ -8,7 +8,7 @@ import { Controlled as ControlledEditor } from 'react-codemirror2'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCompressAlt, faExpandAlt } from '@fortawesome/free-solid-svg-icons'
 
-export default function Editor(props) {
+export default function WebEditor(props) {
   const {
     language,
     displayName,
@@ -18,6 +18,7 @@ export default function Editor(props) {
   const [open, setOpen] = useState(true)
 
   function handleChange(editor, data, value) {
+    console.log(language, "->", value);
     onChange(value)
   }
 
