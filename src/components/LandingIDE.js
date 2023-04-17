@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { CodeEditorWindow } from "./CodeEditorWindow"
 import axios from "axios"
-import "../css/webeditor.css"
+import "../css/editor.css"
 import check from "../hooks/testing"
 
 export const LandingIDE = () => {

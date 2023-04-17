@@ -16,7 +16,7 @@ export const CodeEditorWindow = ({ updateCode, language, code, theme }) => {
             language={language || "cpp"}
             value={value}
             theme="vs-dark"
-            defaultValue="// some comment"
+            defaultValue="// Enter Your Code Here..."
             onChange={handleEditorChange}
         />
         </div>

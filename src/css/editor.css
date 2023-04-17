@@ -1,36 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 body{
-    font-family: 'Roboto', sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:#010233;
+    color:#fff
 }
 .input-url{
     width: 70%;
     height: 40px;
     padding: 3px 13px;
     font-size: 15px;
+    background-color: #8080D7;
+    border-radius:25px;
 }
 .fetch-btn{
     width: 100px;
-    height: 50px;
+    height: 40px;
     font-size: 15px;
-    margin: 0px 10px;
+    margin: 0px 30px;
+    background-color: #8080D7;
+    border-radius: 15px 15px 15px 15px;
 }
 .url-input-cont{
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 20px 0px;
+    
+    
+    
 }
 .question-frame{
     width: 1000px;
     height: 1000px;
 }
+
+
 .ide-input-container{
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    
 }
 .input-container{
     width: 390px;
+    
 }
 .overlay{
     width: 70%;
@@ -40,6 +54,7 @@ body{
     width: 350px;
     padding: 10px 10px;
     font-size: 15px;
+    border-radius: 10px;
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -48,8 +63,12 @@ body{
     padding: 10px 5px;
 }
 .lang-dropdown{
-    padding: 10px 15px;
+    padding: 10px 15px 10px 15px ;
     font-size: 16px;
+    border-radius:20px;
+    color:white;
+    background-color:#010233;
+    border:2px solid #8080D7 ;
 }
 .submitbtn-div{
     display: flex;
@@ -57,13 +76,32 @@ body{
     justify-content: space-evenly;
 }
 .submit-btn{
-    padding: 12px 40px;
-    border-radius: 3px;
-    color: white;
-    background: black;
+    padding: 12px 30px;
+    border-radius: 12px;
+    color:#312929;
+    background: #11B67B;
+    
 }
 .output-msg{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
+}
+.output-msg h3{
+    padding: 0px 20px;
+    color:white;
+    font-style:italic;
+    font-size: larger;
+}
+
+textarea{
+    margin:15px;
+    background-color: #8E8ACD;
+    
+}
+::placeholder{
+    color:#312929;
+
+
 }
