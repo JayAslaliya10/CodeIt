@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/material.css'
 import 'codemirror/mode/xml/xml'
@@ -16,11 +16,16 @@ export default function WebEditor(props) {
     onChange
   } = props
   const [open, setOpen] = useState(true)
+  const [editorValue, setEditorValue] = useState(value);
 
   function handleChange(editor, data, value) {
-    console.log(language, "->", value);
-    onChange(value)
+    setEditorValue(value);
+    onChange(value);
   }
+
+  useEffect(() => {
+    setEditorValue(value);
+  }, [value, editorValue]);
 
   return (
     <div className={`editor-container ${open ? '' : 'collapsed'}`}>
@@ -36,7 +41,7 @@ export default function WebEditor(props) {
       </div>
       <ControlledEditor
         onBeforeChange={handleChange}
-        value={value}
+        value={editorValue}
         className="code-mirror-wrapper"
         options={{
           lineWrapping: true,

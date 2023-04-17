@@ -13,8 +13,11 @@ export const LandingIDE = () => {
         msg : "",
         color : ""
     });
+    const [url, updateUrl] = useState("");
     const languages = [
         { label: 'C++', value: 'cpp' },
+        { label: 'C++ 14', value: 'cpp14' },
+        { label: 'C++ 17', value: 'cpp17' },
         { label: 'C', value: 'c' },
         { label: 'Java', value: 'java' },
         { label: 'Python', value: 'python' },
@@ -72,11 +75,26 @@ export const LandingIDE = () => {
             })
         }
     }
+    const fetchTestCases = async () => {
+        if(url.length <= 5) return;
+        console.log(url)
+        const data = {
+            qn_url: url
+        }
+        await axios.post("http://localhost:5000/api/getdata", data).then((res)=>{
+            let input = res.data.ip
+            input = input.join('\n');
+            let op = res.data.op;
+            // console.log(input, op);
+            ChangeInput(input);
+            changeExpected(op);
+        })
+    }
     return (
         <>
             <div className="url-input-cont">
-                <input placeholder="Enter the question URL" className="input-url"/>
-                <button className="fetch-btn">Fetch</button>
+                <input placeholder="Enter the question URL" className="input-url" onChange={(e)=>{updateUrl(e.target.value)}} value={url}/>
+                <button className="fetch-btn" onClick={fetchTestCases}>Fetch</button>
             </div>
             <div className="ide-input-container">
 
@@ -92,8 +110,8 @@ export const LandingIDE = () => {
                         </select>
                     </div>
                 </div>
-                <div className="test-input-div"><textarea className="test-input" placeholder="Enter the testcases" onChange={inputHover}></textarea></div>
-                <div className="test-input-div"><textarea className="test-input" placeholder="Enter the Expected Output" onChange={expectedOutputHover}></textarea></div>
+                <div className="test-input-div"><textarea className="test-input" placeholder="Enter the testcases" onChange={inputHover} value={input}></textarea></div>
+                <div className="test-input-div"><textarea className="test-input" placeholder="Enter the Expected Output" onChange={expectedOutputHover} value={expected}></textarea></div>
                 <div className="test-input-div">
                     <div className="output-msg">
                         <h3>Output</h3>
