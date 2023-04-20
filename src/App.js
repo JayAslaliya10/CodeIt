@@ -1,3 +1,4 @@
+import React from 'react'
 import { LandingIDE } from "./components/LandingIDE";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./components/Home";
