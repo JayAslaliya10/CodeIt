@@ -65,7 +65,7 @@ app.get("/leetcode", async (req, res) => {
   }
   
   const contestDates = getNextContestDates();
-  console.log(contestDates);
+  // console.log(contestDates);
 
   output=[]
   for(let i=0;i<contestDates.length;i++)
@@ -77,7 +77,7 @@ app.get("/leetcode", async (req, res) => {
       Duration:"1:30"
     })
   }
-    console.log(output);
+    // console.log(output);
     // const output = [{
     //     contest_name:name,
     //     Date:date,
@@ -126,7 +126,7 @@ for(let i=0;i<nextContestDates.length;i++)
   })
   count+=1
 }
-console.log(output);
+// console.log(output);
   
   res.send({
       output
@@ -139,10 +139,10 @@ app.get("/codeforces", async (req, res) => {
   await axios.get("https://codeforces.com/api/contest.list?gym=false").then((res)=>{
     contests=res.data.result
   })
-  console.log("contests length : ",contests.length);
+  // console.log("contests length : ",contests.length);
   // console.log(contests);
   output=await getcontests()
-  console.log(output);
+  // console.log(output);
   res.send({
       output
   })
@@ -168,7 +168,7 @@ async function secondsToHms(seconds) {
     return hDisplay + mDisplay + sDisplay;
   }}
 async function getcontests(){
-  console.log("contests : ",contests.length);
+  // console.log("contests : ",contests.length);
   contestsData=[]
   for(let i=0;i<contests.length;i++){
     if(contests[i].phase=="BEFORE"){
@@ -187,7 +187,7 @@ async function getcontests(){
       })
     }
   }
-  console.log("inside getcontests : \n",contestsData);
+  // console.log("inside getcontests : \n",contestsData);
   return contestsData
 }
 
