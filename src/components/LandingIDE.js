@@ -92,6 +92,7 @@ export const LandingIDE = () => {
     }
     return (
         <>
+            <spn className="heading"> ONLINE COMPILER</spn>
             <div className="url-input-cont">
                 <input placeholder="Enter the question URL" className="input-url" onChange={(e)=>{updateUrl(e.target.value)}} value={url}/>
                 <button className="fetch-btn" onClick={fetchTestCases}>Fetch</button>

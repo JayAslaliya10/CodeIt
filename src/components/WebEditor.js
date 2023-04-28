@@ -10,9 +10,11 @@ export default function WebEditor(props) {
   }
   return (
     <>
-     {/* <div className="header-class">
+     <div className="header-class">
         <h3 className="ide-heading">{displayName}</h3>
-      </div> */}
+      </div>
+      <div className='editor-class'>
+
       <Editor
             height="100%"
             width="100%"
@@ -21,7 +23,8 @@ export default function WebEditor(props) {
             theme="vs-dark"
             defaultValue={value}
             onChange={handleEditorChange}
-        />
+            />
+      </div>
     </>
   )
 }

@@ -23,6 +23,7 @@ function App() {
   }, [html, css, js])
   return (
     <>
+    <h2 className='pane-heading'>Web Compiler</h2>
       <div className='web-container'> 
         <div className='left-cont'>
           <div className="ide-cont html-cont">
@@ -51,7 +52,6 @@ function App() {
           </div>
         </div>
         <div className="pane">
-          <h2 className='pane-heading'>Web Compiler</h2>
           <iframe
             className='dev-output'
             srcDoc={srcDoc}

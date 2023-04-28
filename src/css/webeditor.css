@@ -1,32 +1,43 @@
 .web-container{
+    background-color: hsl(225, 6%, 25%);
     height: 100vh;
-    display: flex;
 }
 .left-cont{
-    width: 750px;
-    margin: 10px 10px;
+    width: 100%;
+    height: 45%;
+    display: flex;
+    padding-bottom: 8px;
 }
 .pane{
     /* height: 200px; */
-    width: 50%;
+    width: 100%;
+    height: 50%;
     background-color: white;
-    margin: 10px 10px;
 }
 .ide-cont{
     padding: 6px 6px;
-    height: 33%;
-    background: #8080D7;
+    width: 32%;
+    background: #1e1e1e;
     margin: 5px;
-    border-bottom-left-radius: 15px;
-    border-top-right-radius: 15px;
+    border-radius: 15px;
+    /* border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px; */
 }
 .pane-heading{
     
-    background: #010233;
+    background: hsl(225, 6%, 25%);
     text-align: center;
     padding: 10px;
 
 }
 .dev-output{
     height: 90%;
+}
+.editor-class{
+    height: 90%;
+}
+.ide-heading{
+    color: #ccc;
+    margin-left: 22px;
+    margin-top: 5px;
 }
