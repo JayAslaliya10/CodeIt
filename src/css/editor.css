@@ -1,8 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color:#010233;
-    color:#fff
+    background-color:#010233e0;
+    color:#fff;   
+}
+.heading{
+    font-family: Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: #8080D7;
+    display: block;
+    font-size: 50px;
+    padding: 15px;
+    font-weight:900;
+    text-shadow:6px 9px #000000d4;
+
 }
 .input-url{
     width: 70%;
@@ -39,6 +50,12 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 20px;
+    padding: 5px 20px 0px 30px;
+    width: 97%;
+    border:ridge 3px #8E8ACD;
+    border-radius: 15px;
+    background-color: #010233;
     
     
 }
@@ -63,6 +80,7 @@ body{
     padding: 10px 5px;
 }
 .lang-dropdown{
+    margin-top: 10px;
     padding: 10px 15px 10px 15px ;
     font-size: 16px;
     border-radius:20px;
@@ -76,6 +94,7 @@ body{
     justify-content: space-evenly;
 }
 .submit-btn{
+    margin-top: 10px;
     padding: 12px 30px;
     border-radius: 12px;
     color:#312929;
