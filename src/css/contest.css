@@ -45,7 +45,7 @@ h3{
     padding: 0px;
     margin: 0px;
 }
-#box1,#box2,#box3,#box4,#box5,#box6{
+.box {
     display: block;
     text-decoration: none;
     font-family: 'georgia';
@@ -94,8 +94,8 @@ td{
 
 
 @media screen and (min-width:700px){
-    #box1,#box2,#box3,#box4,#box5,#box6{
+    .box {
         width:93%;
-        height:500px;
+        /* height:500px; */
     }
 }
