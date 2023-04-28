@@ -143,6 +143,7 @@ app.get("/codeforces", async (req, res) => {
   // console.log("contests length : ",contests.length);
   // console.log(contests);
   output=await getcontests()
+  output=output.reverse()
   // console.log(output);
   res.send({
       output
