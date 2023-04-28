@@ -19,9 +19,141 @@ app.post("/submitcode", async (req, res) => {
     })
 })
 
+app.get("/leetcode", async (req, res) => {
+
+  const moment = require('moment-timezone');
+
+  function getNextContestDates() {
+    const ptTimezone = "Asia/Kolkata";
+    const currentDateTime = moment().tz(ptTimezone);
+    const contestStartTime = "08:00:00";
+    const weeklyContestSchedule = "0 0 8 ? * 6";
+    const biweeklyContestSchedule = "0 0 8 ? * 6/2";
+
+    let nextWeeklyContestDates = [];
+    for (let i = 0; i < 6; i++) {
+      const nextContestDate = moment(currentDateTime).day(7).hour(8).minute(00).second(0).add(i * 7, 'days');
+      const nextContestDateTime = nextContestDate.valueOf();
+      const contestTimeDiff = (nextContestDateTime - currentDateTime.valueOf()) / 1000; // get the time difference in seconds
+      nextWeeklyContestDates.push({
+        date: nextContestDate.format('L'),
+        time: nextContestDate.format('LT'),
+        timeDiff: contestTimeDiff,
+        name:"weekly"
+      });
+    }
+  
+    let nextBiweeklyContestDates = [];
+    for (let i = 0; i < 6; i++) {
+      const nextContestDate = moment(currentDateTime).day(6).hour(20).minute(00).second(0).add(i * 14, 'days');
+      const nextContestDateTime = nextContestDate.valueOf();
+      const contestTimeDiff = (nextContestDateTime - currentDateTime.valueOf()) / 1000; // get the time difference in seconds
+      nextBiweeklyContestDates.push({
+        date: nextContestDate.format('L'),
+        time: nextContestDate.format('LT'),
+        timeDiff: contestTimeDiff,
+        name:"biweekly"
+      });
+    }
+
+   let contestDates = nextWeeklyContestDates.concat(nextBiweeklyContestDates);
+   contestDates.sort(function (a, b) {
+     return moment(a.date + ' ' + a.time).diff(moment(b.date + ' ' + b.time));
+   });
+ 
+   return contestDates;
+  }
+  
+  const contestDates = getNextContestDates();
+  console.log(contestDates);
+
+  output=[]
+  for(let i=0;i<contestDates.length;i++)
+  {
+    output.push({
+      contest_name:contestDates[i].name,
+      Date:contestDates[i].date,
+      Time:contestDates[i].time,
+      Duration:"1:30"
+    })
+  }
+    console.log(output);
+    // const output = [{
+    //     contest_name:name,
+    //     Date:date,
+    //     Time:time,
+    //     Duration:duration
+    // }]
+    res.send({
+output   })
+})
+
+
+app.get("/codechef", async (req, res) => {
+  
+  res.send({
+      output
+  })
+})
+
+
+let contests
+app.get("/codeforces", async (req, res) => {
+  await axios.get("https://codeforces.com/api/contest.list?gym=false").then((res)=>{
+    contests=res.data.result
+  })
+  console.log("contests length : ",contests.length);
+  // console.log(contests);
+  output=await getcontests()
+  console.log(output);
+  res.send({
+      output
+  })
+})
+
 app.listen(port, ()=>{
     console.log(`App is listening on "http://localhost:${port}`)
 })
+
+
+
+async function secondsToHms(seconds) {
+  let d = Number(seconds);
+  if(d <= 0){
+     return '00:00:00'
+  }else{
+    let h = Math.floor(d / 3600);
+    let m = Math.floor(d % 3600 / 60);
+    let s = Math.floor(d % 3600 % 60);
+    let hDisplay = h <= 9 ? '0'+ h+':' : h+ ":";
+    let mDisplay = m <= 9 ? '0'+ m+':' : m+ ":";
+    let sDisplay = s <= 9 ? '0'+ s : s;
+    return hDisplay + mDisplay + sDisplay;
+  }}
+async function getcontests(){
+  console.log("contests : ",contests.length);
+  contestsData=[]
+  for(let i=0;i<contests.length;i++){
+    if(contests[i].phase=="BEFORE"){
+      duration=contests[i].durationSeconds
+      duration= await secondsToHms(duration)
+      startTimeSeconds=contests[i].startTimeSeconds
+      const myDate = new Date( startTimeSeconds*1000);
+      dateTime = myDate.toLocaleString();
+      dateTime=dateTime.split(",")
+
+      contestsData.push({
+        contest_name:contests[i].name,
+        Date:dateTime[0],
+        Time:dateTime[1],
+        Duration:duration
+      })
+    }
+  }
+  console.log("inside getcontests : \n",contestsData);
+  return contestsData
+}
+
 
 const submitCode = async (code, stdin, language) => {
     let data;
