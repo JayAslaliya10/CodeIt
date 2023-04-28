@@ -14,7 +14,7 @@ export const Navbar = () => {
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/onlinecompiler">Online IDE</Link></li>
                 {/* <li><Link to="/webcompiler">Web-dev</Link></li> */}
-                <li><a href="http://localhost:3002/">Web-dev</a></li>
+                <li><a href="/webcompiler">Web-dev</a></li>
                 <li><Link to="#">Contact Us</Link></li>
             </ul>
             {/* <div className="toggle-btn" id="btn">
