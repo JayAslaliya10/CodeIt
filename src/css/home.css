@@ -7,7 +7,7 @@
 
 :root{
     --background-color:#fff;
-    --text-color:#555;
+    --text-color:#807b7b;
     --title-color:#fff;
 }
 .dark-theme{
@@ -16,10 +16,20 @@
     --title-color:#fff;
 
 }
+#dark{
+    background-color: #000;
+    color:#999
+}
+#light{
+    background-color: #ffffffe0;
+    color:#807b7b;
+    --title-color:#171313d0;
+}
 
 .header{
     background-color:#000;
     color:#999;
+    
     transition: background-color 0.8s,color 0.8s;
 }
 
@@ -44,11 +54,11 @@ nav ul{
     width: 100%;
     list-style:none;
     text-align: right;
-    margin-right: 50px;
+    margin-right: 90px;
 }
 nav ul li{
     display: inline-block;
-    margin: 5px 15px; 
+    margin: 5px 20px; 
 }
 nav ul li a{
     text-decoration: none;
@@ -57,6 +67,7 @@ nav ul li a{
 }
 .toggle-btn{
         background-color: #4864ff;
+        position:absolute;
         color:#fff;
         display: flex;
         align-items: center;
@@ -65,10 +76,17 @@ nav ul li a{
         height: 40px;
         border-radius: 20px;
         cursor: pointer;
+        right:2%;
+        top:5%;
+        
 }
 .toggle-btn img{
     width:25px;
     margin-left: 10px;
+}
+.switch{
+    margin-top:5px;
+    margin-left:7px;
 }
 .content{
     margin-top: 10%;
@@ -99,11 +117,17 @@ nav ul li a{
     width: 400px;
     display: block;
     
+    
 }
+/* .pc{
+    position:absolute;
+    bottom:40%; */
+
 .image-box{
     position: absolute;
     bottom:0;
     right:10%;
+    
 }
 .pattern{
     position: absolute;
@@ -111,13 +135,14 @@ nav ul li a{
     left:50%;
     display: flex;
     transform: rotate(40deg);
-    z-index: -1;
+    z-index: 10;
 }
 .pattern img{
     width:450px;
     position:absolute;
     top:0;
     left:0;
+    
     animation: move 1s linear infinite alternate-reverse;
 }
 .pattern  img:nth-child(1){
