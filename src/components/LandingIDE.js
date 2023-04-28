@@ -111,9 +111,6 @@ export const LandingIDE = () => {
                         </select>
                     </div>
                 </div>
-                <p>
-                InputEach test consists of multiple test cases. The first line contains a single integer $$$t$$$ ($$$1 \\le t \\le 10^4$$$) — the number of test cases. The description of test cases follows.The first and only line of each test case contains two integers $$$n$$$ and $$$m$$$ ($$$0\\le n\\le 10^{18}, 1\\le m\\le 10^5$$$) — the sum and the number of integers in the set, respectively.
-                </p>
                 <div className="test-input-div"><textarea className="test-input" placeholder="Enter the testcases" onChange={inputHover} value={input}></textarea></div>
                 <div className="test-input-div"><textarea className="test-input" placeholder="Enter the Expected Output" onChange={expectedOutputHover} value={expected}></textarea></div>
                 <div className="test-input-div">
