@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import '../css/contest.css';
 import axios from "axios";
 export const ContestTable = (props) => {
     const {url, platformName} = props;
-    let contests = []
-    const fetchContest = async () => {
-        await axios.get("http://localhost:3001/" + url).then((res)=>{
-            console.log(res.data)
-        })
-    }
-    fetchContest();
+    const [contests, setContest] = useState([]);
+    useEffect(() => {
+        const fetchContest = async () => {
+            const newurl = "http://localhost:3003/" + url;
+            let newcontests = [];
+            await axios.get(newurl).then((res)=>{
+                // console.log(res.data)
+                for(let i=0; i<6; i++){
+                    newcontests.push(res.data.output[i]);
+                }
+            })
+            setContest(newcontests);
+            console.log("after", contests);
+        }
+        fetchContest();
+    }, [])
     return (
         <>
             <div className="box">
@@ -24,12 +33,6 @@ export const ContestTable = (props) => {
                         </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Weekly Contest 343</td>
-                        <td>Sunday,April 30</td>
-                        <td>8:00 A.M IST</td>
-                        <td>01:30 hrs</td>
-                    </tr>
                     {contests.map((contest) => (
                             <tr>
                             <td>{contest.contest_name}</td>

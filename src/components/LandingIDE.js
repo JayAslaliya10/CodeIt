@@ -50,13 +50,13 @@ export const LandingIDE = () => {
             msg:"Compiling ...",
             color:"orange"
         })
-        // console.log(data);
+        console.log(data);
         updateMsg({
             msg: "Compiling..",
             color : "orange"
         })
-        await axios.post("http://localhost:3001/submitcode", data).then((res)=>{
-            // console.log(res.data.output);
+        await axios.post("http://localhost:3003/submitcode", data).then((res)=>{
+            console.log("inside", res.data.output);
             changeOutput(res.data.output.output);
             // console.log(output,  " -  " ,expected);
             // console.log(typeof(output));
@@ -92,7 +92,7 @@ export const LandingIDE = () => {
     }
     return (
         <>
-            <spn className="heading"> ONLINE COMPILER</spn>
+            <span className="heading"> ONLINE COMPILER</span>
             <div className="url-input-cont">
                 <input placeholder="Enter the question URL" className="input-url" onChange={(e)=>{updateUrl(e.target.value)}} value={url}/>
                 <button className="fetch-btn" onClick={fetchTestCases}>Fetch</button>

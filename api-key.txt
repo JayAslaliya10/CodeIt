@@ -11,3 +11,6 @@ npm start
 
 pip install flask-cors
 
+NODEJS -> 3003 PORT NO 
+FLASK -> 5000 PORT NO 
+REACT -> 3000

@@ -12,6 +12,7 @@ const port = 3003;
 
 app.post("/submitcode", async (req, res) => {
     const {code, stdin, language} = req.body;
+    console.log("code", code);
     if(stdin == null) stdin = "";
     const output = await submitCode(code, stdin, language);
     res.send({

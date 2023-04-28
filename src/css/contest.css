@@ -55,7 +55,7 @@ h3{
     text-align: center;
     font-size: 20px;
     color: #fff;
-    border: ridge 2px #baacf4;
+    /* border: ridge 2px #baacf4; */
     background: linear-gradient(-225deg, #47479b 0%, #4f35a7 53%, #6457C6 100%);
     border-radius: 10px;
     box-shadow: 17px 20px 20px #40408b;
@@ -65,7 +65,7 @@ h3{
 table{
     margin: 0px 15px;
     text-transform: none;
-    border: 2px ridge #010233;
+    /* border: 2px ridge #010233; */
     border-collapse:separate;
     border-spacing: 4px;
     border-radius: 5px;
@@ -75,7 +75,7 @@ table{
 }
 th,td,tr{
     text-transform: none;
-    border: 2px ridge #010233;
+    /* border: 2px ridge #010233; */
     border-collapse:separate;
     border-spacing: 4px;
     border-radius: 5px;
