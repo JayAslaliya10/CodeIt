@@ -1,56 +1,30 @@
-import React, { useEffect, useState } from 'react'
-import 'codemirror/lib/codemirror.css'
-import 'codemirror/theme/material.css'
-import 'codemirror/mode/xml/xml'
-import 'codemirror/mode/javascript/javascript'
-import 'codemirror/mode/css/css'
-import { Controlled as ControlledEditor } from 'react-codemirror2'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCompressAlt, faExpandAlt } from '@fortawesome/free-solid-svg-icons'
+import React, { useState } from 'react'
+import Editor from "@monaco-editor/react";
+import "../css/webeditor.css"
 
 export default function WebEditor(props) {
-  const {
-    language,
-    displayName,
-    value,
-    onChange
-  } = props
-  const [open, setOpen] = useState(true)
-  const [editorValue, setEditorValue] = useState(value);
-
-  function handleChange(editor, data, value) {
-    setEditorValue(value);
-    onChange(value);
+  const {value, onChange, language, displayName} = props
+  const handleEditorChange = (data) => {
+      onChange(data)
+      console.log(value);
   }
-
-  useEffect(() => {
-    setEditorValue(value);
-  }, [value, editorValue]);
-
   return (
-    <div className={`editor-container ${open ? '' : 'collapsed'}`}>
-      <div className="editor-title">
-        {displayName}
-        <button
-          type="button"
-          className="expand-collapse-btn"
-          onClick={() => setOpen(prevOpen => !prevOpen)}
-        >
-          <FontAwesomeIcon icon={open ? faCompressAlt : faExpandAlt} />
-        </button>
+    <>
+     <div className="header-class">
+        <h3 className="ide-heading">{displayName}</h3>
       </div>
-      <ControlledEditor
-        onBeforeChange={handleChange}
-        value={editorValue}
-        className="code-mirror-wrapper"
-        options={{
-          lineWrapping: true,
-          lint: true,
-          mode: language,
-          theme: 'material',
-          lineNumbers: true
-        }}
-      />
-    </div>
+      <div className='editor-class'>
+
+      <Editor
+            height="100%"
+            width="100%"
+            language={language}
+            value={value}
+            theme="vs-dark"
+            defaultValue={value}
+            onChange={handleEditorChange}
+            />
+      </div>
+    </>
   )
 }

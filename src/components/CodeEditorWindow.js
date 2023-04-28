@@ -6,7 +6,7 @@ export const CodeEditorWindow = ({ updateCode, language, code, theme }) => {
     const [value, setValue] = useState("");
     const handleEditorChange = (value) => {
         setValue(value);
-        updateCode("code", value);
+        updateCode(value);
     };
     return (
         <div className="overlay rounded-md overflow-hidden w-full h-full shadow-4xl">

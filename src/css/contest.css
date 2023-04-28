@@ -19,10 +19,11 @@
     padding: 30px;
     font-size: 40px;
     display:block;
-    border: solid 2px white;
+    border: ridge 2px white;
     border-radius: 10px;
     color:#8E8ACD;
-    margin:10px 60px 20px 10px;
+    margin:10px 70px 20px 0px;
+    background-color: #010233;
 
 }
 .contestlink a{
