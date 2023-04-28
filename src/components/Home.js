@@ -12,7 +12,7 @@ export const ThemeContext=createContext(null);
 
 
 export const Home = () => {
-    const[theme,setTheme] = useState("light");
+    const[theme,setTheme] = useState("dark");
 
     const toggleTheme= () => {
         setTheme((curr) => (curr === "light" ? "dark" : "light"));
@@ -36,14 +36,14 @@ export const Home = () => {
                     <h1>Hello!</h1>
                     <h1><span>We're</span> Code~It...</h1><br/>
                     <p>"Unleash your coding potential with ease: Join our platform today."</p>
-                    <Link to="#">Contests</Link>
+                    <Link to="/contestpage">Contests</Link>
+                    
                 </div>
                 <div className="image-box">
                     <img className="pc" src={img1} alt=""/>
-                    
                     <div className="pattern">
-                        <img src={img2} alt=""/>
-                        <img src={img2} alt=""/>
+                        <img src={img2} />
+                        <img src={img2} />
                     </div>
                   
                 </div>
