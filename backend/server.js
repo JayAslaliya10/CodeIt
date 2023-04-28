@@ -40,7 +40,7 @@ app.get("/leetcode", async (req, res) => {
         date: nextContestDate.format('L'),
         time: nextContestDate.format('LT'),
         timeDiff: contestTimeDiff,
-        name:"weekly"
+        name:"Weekly"
       });
     }
   
@@ -53,7 +53,7 @@ app.get("/leetcode", async (req, res) => {
         date: nextContestDate.format('L'),
         time: nextContestDate.format('LT'),
         timeDiff: contestTimeDiff,
-        name:"biweekly"
+        name:"Biweekly"
       });
     }
 

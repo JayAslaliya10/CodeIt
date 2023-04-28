@@ -1,3 +1,5 @@
+document.body.style.backgroundColor = "red";
+
 C++ 17
 
 URL - https://codeforces.com/contest/1823/problem/B
