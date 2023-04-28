@@ -90,6 +90,43 @@ output   })
 
 
 app.get("/codechef", async (req, res) => {
+
+  const moment = require('moment-timezone');
+
+function getNextContestDates() {
+  const istTimezone = "Asia/Kolkata";
+  const currentDateTime = moment().tz(istTimezone);
+  const contestStartTime = "20:00:00";
+  const contestSchedule = "0 0 20 ? * 3";
+  let nextContestDates = [];
+  for (let i = 0; i < 6; i++) {
+    const nextContestDate = moment(currentDateTime).day(3).hour(20).minute(0).second(0).add(i * 7, 'days');
+    const nextContestDateTime = nextContestDate.valueOf();
+    const contestTimeDiff = (nextContestDateTime - currentDateTime.valueOf()) / 1000;
+    nextContestDates.push({
+      date: nextContestDate.format('L'),
+      time: nextContestDate.format('LT'),
+      timeDiff: contestTimeDiff,
+    });
+  }
+
+  return nextContestDates;
+}
+const nextContestDates = getNextContestDates();
+
+output=[]
+count=88
+for(let i=0;i<nextContestDates.length;i++)
+{
+  output.push({
+    contest_name:"Starter "+count,
+    Date:nextContestDates[i].date,
+    Time:nextContestDates[i].time,
+    Duration:"2:00:00"
+  })
+  count+=1
+}
+console.log(output);
   
   res.send({
       output
