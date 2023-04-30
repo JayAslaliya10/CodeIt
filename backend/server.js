@@ -40,7 +40,7 @@ app.get("/leetcode", async (req, res) => {
         date: nextContestDate.format('L'),
         time: nextContestDate.format('LT'),
         timeDiff: contestTimeDiff,
-        name:"weekly"
+        name:"Weekly"
       });
     }
   
@@ -53,7 +53,7 @@ app.get("/leetcode", async (req, res) => {
         date: nextContestDate.format('L'),
         time: nextContestDate.format('LT'),
         timeDiff: contestTimeDiff,
-        name:"biweekly"
+        name:"Biweekly"
       });
     }
 
@@ -143,6 +143,7 @@ app.get("/codeforces", async (req, res) => {
   // console.log("contests length : ",contests.length);
   // console.log(contests);
   output=await getcontests()
+  output=output.reverse()
   // console.log(output);
   res.send({
       output
