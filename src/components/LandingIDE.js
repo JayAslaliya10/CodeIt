@@ -55,15 +55,20 @@ export const LandingIDE = () => {
             msg: "Compiling..",
             color : "orange"
         })
+        let t1;
         await axios.post("http://localhost:3003/submitcode", data).then((res)=>{
             console.log("inside", res.data.output);
+            t1 = res.data.output.output;
             changeOutput(res.data.output.output);
             // console.log(output,  " -  " ,expected);
             // console.log(typeof(output));
             // console.log(typeof(expected));
         })
-
-        if(check(output, expected)){
+        console.log("output");
+        console.log(t1);
+        console.log("expected");
+        console.log(expected);
+        if(check(t1, expected)){
             updateMsg({
                 msg: "Accepted",
                 color : "green"
