@@ -1,7 +1,7 @@
 backend1 running command
 node server.js
 
-backend 2 running command
+backend 2 running command (create a environment)
 rashid\scripts\activate
 python app.python
 
