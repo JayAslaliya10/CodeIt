@@ -33,7 +33,7 @@ app.get("/leetcode", async (req, res) => {
 
     let nextWeeklyContestDates = [];
     for (let i = 0; i < 6; i++) {
-      const nextContestDate = moment(currentDateTime).day(7).hour(8).minute(00).second(0).add(i * 7, 'days');
+      const nextContestDate = moment(currentDateTime).day(7).hour(8).minute(0).second(0).add(i * 7, 'days');
       const nextContestDateTime = nextContestDate.valueOf();
       const contestTimeDiff = (nextContestDateTime - currentDateTime.valueOf()) / 1000; // get the time difference in seconds
       nextWeeklyContestDates.push({
@@ -46,7 +46,7 @@ app.get("/leetcode", async (req, res) => {
   
     let nextBiweeklyContestDates = [];
     for (let i = 0; i < 6; i++) {
-      const nextContestDate = moment(currentDateTime).day(6).hour(20).minute(00).second(0).add(i * 14, 'days');
+      const nextContestDate = moment(currentDateTime).day(6).hour(20).minute(0).second(0).add(i * 14, 'days');
       const nextContestDateTime = nextContestDate.valueOf();
       const contestTimeDiff = (nextContestDateTime - currentDateTime.valueOf()) / 1000; // get the time difference in seconds
       nextBiweeklyContestDates.push({
